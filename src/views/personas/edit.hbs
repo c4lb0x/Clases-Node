@@ -1,0 +1,64 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">EDITANDO UNA PERSONA</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/edit/{{persona.id}}" method="post">
+                    <div class="input-group mt-2">
+                        <label for="name" class="input-group-text">Nombre</label>
+                        <input class="form-control" type="text" name="name" id="name" value="{{persona.name}}" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="lastname" class="input-group-text">Apellido</label>
+                        <input class="form-control" type="text" name="lastname" id="lastname" value="{{persona.lastname}}" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="correo" class="input-group-text">Correo</label>
+                        <input class="form-control" type="email" name="correo" id="correo" value="{{persona.correo}}" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="age" class="input-group-text">Edad</label>
+                        <input class="form-control" type="number" name="age" id="age" value="{{persona.age}}" placeholder="0" required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="tipoPersona" class="input-group-text">Tipo persona:</label>
+                        <select class="form-select" aria-label="Default select example" id="id_tp_p" name="id_tp_p">
+                            {{#if tipoPersona}}
+                                {{#each tipoPersona}}
+                                    <option value="{{id_tp}}">{{nombre_tp}}</option>   
+                                {{/each}}
+                            {{else}}
+                                <div class="card text-center mx-auto" style="width: 350px;">
+                                <div class="card-header">
+                                <h3>Debes crear un tipo de persona</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p>Presiona este boton para que puedas registrar a un tipo de persona en la aplicacion</p>
+                                    <a href="#" class="btn btn-outline-primary">Ir a crear</a>
+                                </div>
+                            {{/if}}
+                        </select>
+                    </div>
+                    <script>
+                        var tipop = "{{persona.id_tp_p}}";
+                        const select = document.getElementById('id_tp_p');
+                        for (let i=0; i < select.options.length; i++) {
+                            if (select.options[i].value === tipop) {
+                                select.options[i].selected = true;
+                            } else {
+                                select.options[i].selected = false;
+                            }
+                        }
+                    </script>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success"> Actualizar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
