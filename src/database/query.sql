@@ -1,4 +1,4 @@
-CREATE DATABASE Prueba01;
+CREATE DATABASE Desarrollo;
 
 USE Prueba01;
 
