@@ -1,0 +1,48 @@
+<div class="conatiner p-4">"conatiner p-4"
+    <div class="row">"row"
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">registrar una nueva compra</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/compracrear" method="post">
+                    <div class="input-group mt-2">
+                        <label for="id_p_com" class="input-group-text">Persona:</label>
+                        <select class="form-select" aria-label="Default select example" id="id_p_com" name="id_p_com">
+                            {{#if personas}}
+                                <option selected>Seleccione...</option>
+                                {{#each personas}}
+                                <option value="{{id}}">{{name}}</option>
+                                {{/each}}
+                            {{/if}}
+                        </select>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_pro_com" class="input-group-text">Tipo producto:</label>
+                        <select class="form-select" aria-label="Default select example" id="id_pro_com" name="id_pro_com">
+                            {{#if productos}}
+                                <option selected>Seleccione...</option>
+                                {{#each productos}}
+                                <option value="{{id_pro}}">{{nombre_pro}}</option>
+                                {{/each}}
+                            {{/if}}
+                        </select>
+                    <div class="input-group mt-2">
+                        <label for="cantidad_com" class="input-group-text">Cantidad</label>
+                        <input class="form-control" type="text" name="cantidad_com" id="cantidad_com" placeholder="0" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="fecha_com" class="input-group-text">Fecha</label>
+                        <input class="form-control" type="date" name="fecha_com" id="fecha_com" placeholder="Formato: dd/mm/aaaa" required>
+                    </div>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success"> Crear</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

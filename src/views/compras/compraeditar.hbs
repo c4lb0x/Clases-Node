@@ -1,0 +1,49 @@
+<div class="conatiner p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">EDITANDO UNA COMPRA</h3>
+                </div>
+
+                <div class="card-body"></div>
+                    <form action="/compracrear" method="post">
+                    <div class="input-group mt-2">
+                        <label for="id_p_com" class="input-group-text">Persona:</label>
+                        <select class="form-select" aria-label="Default select example" id="id_p_com" name="id_p_com" value="{{persona.id}}">
+                            {{#if personas}}
+                                <option selected value="{{id}}">{{name}}</option>
+                                {{#each personas}}
+                                <option value="{{id}}">{{name}}</option>
+                                {{/each}}
+                            {{/if}}
+                        </select>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="id_pro_com" class="input-group-text">Tipo producto:</label>
+                        <select class="form-select" aria-label="Default select example" id="id_pro_com" name="id_pro_com" value="{{productos.id_pro}}">
+                            {{#if productos}}
+                                <option selected>Seleccione...</option>
+                                {{#each productos}}
+                                <option value="{{id_pro}}">{{nombre_pro}}</option>
+                                {{/each}}
+                            {{/if}}
+                        </select>
+                    <div class="input-group mt-2">
+                        <label for="cantidad_com" class="input-group-text">Cantidad</label>
+                        <input class="form-control" type="text" name="cantidad_com" id="cantidad_com" placeholder="0" autofocus required value="{{cantidad_com}}">
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="fecha_com" class="input-group-text">Fecha</label>
+                        <input class="form-control" type="date" name="fecha_com" id="fecha_com" placeholder="Formato: dd/mm/aaaa" required value="{{fecha_com}}">
+                    </div>
+                </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success"> Actualizar</button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

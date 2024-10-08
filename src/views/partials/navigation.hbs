@@ -12,11 +12,14 @@
         <li class="nav-item">
           <a class="nav-link" href="/">Inicio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/add">Crear</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/list">Listar</a>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Personas
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/add">Crear</a></li>
+            <li><a class="dropdown-item" href="/list">Listar</a></li>
+          </ul>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -25,7 +28,15 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/prodcrear">Crear</a></li>
             <li><a class="dropdown-item" href="/prodlist">Listar</a></li>
-            <li><a class="dropdown-item" href="/comadd">Registrar compra</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Compras
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="/compracrear">Crear</a></li>
+            <li><a class="dropdown-item" href="/compralistar">Listar</a></li>
           </ul>
         </li>
       </ul>

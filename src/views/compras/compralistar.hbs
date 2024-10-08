@@ -1,31 +1,29 @@
-<div class="container"></div>
+<div class="container">
     <div class="row mt-5">
-        <h3 class="text-center text-uppercase p-2">Lista de personas</h3>
-        {{#if personas}}
+        <h3 class="text-center text-uppercase p-2">Lista de copmpras</h3>
+        {{#if compras}}
             <table class="table text-center">
                 <thead>
                     <tr class="table-dark">
-                        <th scope="col" class="col-4">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Edad</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Tipo de Persona</th>
+                        <th scope="col" class="col-4">Nombre Cliente</th>
+                        <th scope="col">Nopmbre del producto</th>
+                        <th scope="col">Fecha de Compra</th>
+                        <th scope="col">Cantidad comprada</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each personas}}
+                    {{#each compras}}
                         <tr>
                             <td>{{name}}</td>
-                            <td>{{lastname}}</td>
-                            <td>{{age}}</td>
-                            <td>{{correo}}</td>
-                            <td>{{nombre_tp}}</td>
+                            <td>{{nombre_pro}}</td>
+                            <td>{{fecha_com}}</td>
+                            <td>{{cantidad_com}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="/edit/{{id}}" class="btn btn-warning p-2">
+                                    <a href="/compraedit/{{id_com}}" class="btn btn-warning p-2">
                                     <i class="fa-solid fa-pencil"></i></a>
-                                    <a href="/delete/{{id}}" class="btn btn-danger p-2">
+                                    <a href="/compradelete/{{id_com}}" class="btn btn-danger p-2">
                                     <i class="fa-solid fa-trash"></i></a>
                                 </div>
                             </td>
@@ -34,7 +32,7 @@
                 </tbody>
                 <tfoot>
                     <tr class="table-dark">
-                        <td colspan="6">REGISTRO DE PERSONAS HASTA LA FECHA DE CONSULTA</td>
+                        <td colspan="6">REGISTRO DE COMPRAS HASTA LA FECHA DE CONSULTA</td>
                     </tr>
                 </tfoot>
             </table>
@@ -42,11 +40,11 @@
         {{else}}
             <div class="card text-center mx-auto" style="width: 350px;">
                 <div class="card-header">
-                    <h3>Debes crear una persona</h3>
+                    <h3>Debes registrar una compra</h3>
                 </div>
                 <div class="card-body">
                     <p>Presiona este boton para que puedas registrar a una persona en la aplicacion</p>
-                    <a href="/add" class="btn btn-outline-primary">Ir a crear</a>
+                    <a href="/compracrear" class="btn btn-outline-primary">Ir a crear</a>
                 </div>
         {{/if}}
     </div>
