@@ -12,15 +12,26 @@
                         <label for="id_p_com" class="input-group-text">Persona:</label>
                         <select class="form-select" aria-label="Default select example" id="id_p_com" name="id_p_com" value="{{persona.id}}">
                             {{#if personas}}
-                                <option selected value="{{id}}">{{name}}</option>
+                                <option selected value="{{persona.id}}">{{persona.name}}</option>
                                 {{#each personas}}
                                 <option value="{{id}}">{{name}}</option>
                                 {{/each}}
                             {{/if}}
                         </select>
                     </div>
+                    <script>
+                        var tipop = "{{compras.id_p_com}}";
+                        const select = document.getElementById('id_p_com');
+                        for (let i=0; i < select.options.length; i++) {
+                            if (select.options[i].value === tipop) {
+                                select.options[i].selected = true;
+                            } else {
+                                select.options[i].selected = false;
+                            }
+                        }
+                    </script>
                     <div class="input-group mt-2">
-                        <label for="id_pro_com" class="input-group-text">Tipo producto:</label>
+                        <label for="id_pro_com" class="input-group-text">Producto:</label>
                         <select class="form-select" aria-label="Default select example" id="id_pro_com" name="id_pro_com" value="{{productos.id_pro}}">
                             {{#if productos}}
                                 <option selected>Seleccione...</option>
