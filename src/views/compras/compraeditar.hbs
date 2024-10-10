@@ -17,27 +17,6 @@
                             {{/if}}
                         </select>
                     </div>
-                    <script>
-                        var tipop = "{{compra.id_p_com}}";
-                        var tipopro = "{{compra.id_pro_com}}";
-                        const selectx = document.getElementById('id_p_com');
-                        for (let i=0; i < selectx.options.length; i++) {
-                            if (selectx.options[i].value === tipop) {
-                                selectx.options[i].selected = true;
-                            } else {
-                                selectx.options[i].selected = false;
-                            }
-                        }
-
-                        const selectpro = document.getElementById('id_pro_com');
-                        for (let i=0; i < selectpro.options.length; i++) {
-                            if (selectpro.options[i].value === tipopro) {
-                                selectpro.options[i].selected = true;
-                            } else {
-                                selectpro.options[i].selected = false;
-                            }
-                        }
-                    </script>
                     <div class="input-group mt-2">
                         <label for="producto" class="input-group-text">Producto:</label>
                         <select class="form-select" aria-label="Default select example" id="id_pro_com" name="id_pro_com">
@@ -59,6 +38,26 @@
                     <div class="form-group mt-4 d-grid gap-2">
                         <button class="btn btn-success"> Actualizar</button>
                     </form>
+                     <script>
+                        var tipop = "{{compra.id_p_com}}";
+                        var tipopro = "{{productos.id_pro_com}}";
+                        const selectx = document.getElementById('id_p_com');
+                        for (let i=0; i < selectx.options.length; i++) {
+                            if (selectx.options[i].value === tipop) {
+                                selectx.options[i].selected = true;
+                            } else {
+                                selectx.options[i].selected = false;
+                            }
+                        }
+                        const selecty = document.getElementById('id_pro_com');
+                        for (let i=0; i < selecty.options.length; i++) {
+                            if (selecty.options[i].value === tipopro) {
+                                selecty.options[i].selected = true;
+                            } else {
+                                selecty.options[i].selected = false;
+                            }
+                        }
+                    </script>
                 </div>
             </div>
         </div>

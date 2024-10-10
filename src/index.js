@@ -5,6 +5,7 @@ import {join, dirname} from  'path'
 import { fileURLToPath } from 'url';
 import personasRoutes from './routes/personas.routes.js'
 import productosRoutes from './routes/productos.routes.js'
+import comprasRoutes from './routes/compras.routes.js'
 
 //Initialization
 const app = express();
