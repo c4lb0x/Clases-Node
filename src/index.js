@@ -30,11 +30,12 @@ app.use(express.json());
 
 //Routes
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('inicio')
 });
 
 app.use(personasRoutes);
 app.use(productosRoutes);
+app.use(comprasRoutes);
 
 //Public files
 app.use(express.static(join(__dirname, 'public')));

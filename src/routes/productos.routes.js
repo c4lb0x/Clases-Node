@@ -68,4 +68,10 @@ router.get('/proddelete/:id_pro', async(req, res)=>{
     }
 });
 
+//aqui el router del redireccionamiento del login hacia el inicio
+
+router.get('login/inicio', async(req,res)=>{
+    res.render('login/inicio');
+});
+
 export default router;
