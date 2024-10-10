@@ -1,16 +1,29 @@
-<main class="mt-5">
-    <div class="container">
-        <div class="card mx-auto" style="width:500px;">
-            <div class="card-header">
-                <img class="card-img-top mx-auto m-2 rounded-circle" src="/img/logonode.png" alt="Logo" style="width: 150px;height:150px;display:block;">
-                <h3 class="text-uppercase text-center p-4">CRUD con node js y mysql</h3>
-            </div>
-            <div class="card-body text-center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus maiores pariatur at placeat vel quam corporis quod odit itaque illum, non neque, perferendis eveniet cupiditate.</p>
-                <a href="/add" class="btn btn-primary">Crear una persona</a>
-                <a href="/prodcrear" class="btn btn-primary">Crear un producto</a>
-                <a href="/compracrear" class="btn btn-primary">Registrar una compra</a>
+
+
+<div class="conatiner p-4"></div>
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">LOGUEARSE A LA APLICACION</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/inicio" method="post">
+                    <div class="input-group mt-2">
+                        <label for="userName" class="input-group-text">Usuario</label>
+                        <input class="form-control" type="text" name="userName" id="userName" placeholder="Ejemplo: Luis Angel" autofocus required>
+                    </div>
+                    <div class="input-group mt-2">
+                        <label for="password" class="input-group-text">Contraseña</label>
+                        <input class="form-control" type="password" name="password" id="password" required>
+                    </div>
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success"> Ingresar</button>
+                    </div>
+                    </form>
+                 <script src="/src/login.js"></script>   
+                </div>
             </div>
         </div>
     </div>
-</main>
+</div>
