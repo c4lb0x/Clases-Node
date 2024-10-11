@@ -25,7 +25,7 @@ router.post('/compracrear', async(req, res)=>{
 
 router.get('/compralistar', async(req, res)=>{
     try{
-        const [result] = await pool.query('SELECT p.name, pro.nombre_pro, date_format(c.fecha_com,\'%m/%d/%Y\') fecha, c.cantidad_com, c.id_com FROM personas p, compras c, productos pro WHERE id_p_com = id AND id_pro_com = id_pro;');
+        const [result] = await pool.query('SELECT p.id, p.name, pro.id_pro, pro.nombre_pro, date_format(c.fecha_com,\'%m/%d/%Y\') fecha, c.cantidad_com, c.id_com, c.id_p_com, c.id_pro_com FROM personas p, compras c, productos pro WHERE id_p_com = id AND id_pro_com = id_pro;');
         res.render('compras/compralistar', {compras: result});
     }
     catch(err){
