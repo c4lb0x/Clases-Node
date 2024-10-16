@@ -5,23 +5,22 @@
         <div class="col-md-4 mx-auto">
             <div class="card text-center">
                 <div class="card-header">
-                    <h3 class="text-uppercase">LOGUEARSE A LA APLICACION</h3>
+                    <h3 class="text-uppercase">Regsitrarse</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/inicio" method="post">
+                    <form action="/userauth" method="post">
                     <div class="input-group mt-2">
-                        <label for="userName" class="input-group-text">Usuario</label>
-                        <input class="form-control" type="text" name="userName" id="userName" placeholder="Ejemplo: Luis Angel" autofocus required>
+                        <label for="usuarios" class="input-group-text">Usuario</label>
+                        <input class="form-control" type="text" name="userName_us" id="userName_us" placeholder="Ejemplo: Luis Angel" autofocus required>
                     </div>
                     <div class="input-group mt-2">
                         <label for="password" class="input-group-text">Contraseña</label>
-                        <input class="form-control" type="password" name="password" id="password" required>
+                        <input class="form-control" type="password" name="password_us" id="password_us" required>
                     </div>
                     <div class="form-group mt-4 d-grid gap-2">
-                        <button class="btn btn-success"> Ingresar</button>
+                        <button class="btn btn-success"> Registrarse</button>
                     </div>
-                    </form>
-                 <script src="/src/login.js"></script>   
+                    </form>  
                 </div>
             </div>
         </div>

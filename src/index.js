@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import personasRoutes from './routes/personas.routes.js'
 import productosRoutes from './routes/productos.routes.js'
 import comprasRoutes from './routes/compras.routes.js'
+import userAuthRoutes from './routes/userAuth.Routes.js'
 
 //Initialization
 const app = express();
@@ -30,12 +31,13 @@ app.use(express.json());
 
 //Routes
 app.get('/', (req, res) => {
-    res.render('inicio')
+    res.render('index')
 });
 
 app.use(personasRoutes);
 app.use(productosRoutes);
 app.use(comprasRoutes);
+app.use(userAuthRoutes);
 
 //Public files
 app.use(express.static(join(__dirname, 'public')));
