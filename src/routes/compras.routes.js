@@ -49,10 +49,10 @@ router.get('/compraedit/:id_com', async(req, res)=>{
 
 router.post('/compraedit/:id_com', async(req, res)=>{
     try{
-        const {cantidad_com, fecha_com, id_p_com, id_pro_com} = req.body;
         const {id_com} = req.params;
+        const {cantidad_com, id_p_com, id_pro_com} = req.body;
         const editCompra = {
-            cantidad_com, fecha_com, id_p_com, id_pro_com
+            cantidad_com, id_p_com, id_pro_com   
         };
         await pool.query('UPDATE compras SET ? WHERE id_com = ?', [editCompra, id_com]);
         res.redirect('/compralistar');
