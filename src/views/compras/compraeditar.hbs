@@ -6,7 +6,7 @@
                     <h3 class="text-uppercase">EDITANDO UNA COMPRA</h3>
                 </div>
                 <div class="card-body">
-                    <form action="/compraeditar/{{compras.id_com}}" method="post">
+                    <form action="/compraedit/{{compras.id_com}}" method="post">
                     <div class="input-group mt-2">
                         <label for="persona" class="input-group-text">Persona:</label>
                         <select class="form-select" aria-label="Default select example" id="id_p_com" name="id_p_com">
@@ -56,7 +56,7 @@
                             } else {
                                 selecty.options[i].selected = false;
                             }
-                        }
+                        };compraeditar
                     </script>
                 </div>
             </div>

@@ -36,11 +36,11 @@ router.get('/compralistar', async(req, res)=>{
 router.get('/compraedit/:id_com', async(req, res)=>{
     try{
         const {id_com} = req.params;
-        const [compras] = await pool.query('SELECT c.id_pro_com, c.id_p_com, c.cantidad_com, c.id_com, date_format(c.fecha_com,\'%Y-%m-%d\') fecha, c.cantidad_com FROM compras c WHERE id_com = ?', [id_com]);
+        const [compras] = await pool.query('SELECT c.fecha_com, c.id_pro_com, c.id_p_com, c.cantidad_com, c.id_com, date_format(c.fecha_com,\'%Y-%m-%d\') fecha, c.cantidad_com FROM compras c WHERE id_com = ?', [id_com]);
         const [resultper] = await pool.query('SELECT * FROM personas');
         const [resultpro] = await pool.query('SELECT * FROM productos');
         const compraEdit = compras[0];
-        res.render('compras/compraeditar', {compras: compraEdit, productos:resultpro, personas: resultper});
+        res.render('compras/compraeditar', {compras:compraEdit, productos:resultpro, personas:resultper});
     }
     catch(err){
         res.status(500).json({message:err.message});
@@ -50,11 +50,10 @@ router.get('/compraedit/:id_com', async(req, res)=>{
 router.post('/compraedit/:id_com', async(req, res)=>{
     try{
         const {id_com} = req.params;
+        const {fecha_com} = req.params;
         const {cantidad_com, id_p_com, id_pro_com} = req.body;
-        const editCompra = {
-            cantidad_com, id_p_com, id_pro_com   
-        };
-        await pool.query('UPDATE compras SET ? WHERE id_com = ?', [editCompra, id_com]);
+        const editCompra = {cantidad_com, id_p_com, id_pro_com};
+        await pool.query('UPDATE compras SET ? WHERE id_com = ?', [editCompra, id_com, fecha_com]);
         res.redirect('/compralistar');
     }
     catch(err){
